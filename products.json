@@ -3,7 +3,7 @@
     "id": "mkx_cart",
     "name": "MKX CARTRIDGE 2G",
     "offer_qty": "4 FOR",
-    "price": "5",
+    "price": "$45",
     "badge": "VAPES",
     "images": [
       "https://skoop-general.s3.us-east-1.amazonaws.com/n8n_image_gen%2Fmkx_cartridge_box-1770340372957.png"
@@ -14,7 +14,7 @@
     "id": "legit_labs",
     "name": "LEGIT LABS LIVE RESIN<br>CARTRIDGE 1G",
     "offer_qty": "3 FOR",
-    "price": "5",
+    "price": "$55",
     "badge": "VAPES",
     "images": [
       "https://skoop-general.s3.us-east-1.amazonaws.com/n8n_image_gen%2Flegit_labs_box-1770340400372.png"
@@ -25,11 +25,32 @@
     "id": "mkx_disp",
     "name": "MKX DISPOSABLE 3G",
     "offer_qty": "4 FOR",
-    "price": "5",
+    "price": "$45",
     "badge": "VAPES",
     "images": [
-      "https://skoop-general.s3.us-east-1.amazonaws.com/n8n_image_gen%2Fmkx_disposable_cyan-1770340426216.png",
-      "https://skoop-general.s3.us-east-1.amazonaws.com/n8n_image_gen%2Fmkx_disposable_pink-1770340455418.png"
+      "https://skoop-general.s3.us-east-1.amazonaws.com/n8n_image_gen%2Fmkx_disposable_cyan-1770340426216.png"
+    ],
+    "layout_type": "double_stack"
+  },
+  {
+    "id": "mkx_disp",
+    "name": "MKX DISPOSABLE 3G",
+    "offer_qty": "4 FOR",
+    "price": "$45",
+    "badge": "VAPES",
+    "images": [
+      "https://skoop-general.s3.us-east-1.amazonaws.com/n8n_image_gen%2Fmkx_disposable_cyan-1770340426216.png"
+    ],
+    "layout_type": "double_stack"
+  },
+  {
+    "id": "mkx_disp",
+    "name": "MKX DISPOSABLE 3G",
+    "offer_qty": "4 FOR",
+    "price": "$45",
+    "badge": "VAPES",
+    "images": [
+      "https://skoop-general.s3.us-east-1.amazonaws.com/n8n_image_gen%2Fmkx_disposable_cyan-1770340426216.png"
     ],
     "layout_type": "double_stack"
   }
