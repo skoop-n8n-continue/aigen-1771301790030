@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zen Garden Dispensary Menu</title>
+  
+  <!-- Cache Busting -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- GSAP Core + Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Scene Container -->
+  <div id="scene">
+    <!-- Layer 1: Background -->
+    <div id="background"></div>
+    
+    <!-- Layer 2: Background Effects -->
+    <div id="background-effects">
+        <div id="light-rays"></div>
+        <div id="ripples-container"></div>
+    </div>
+    
+    <!-- Layer 3: Products Container (dynamically populated) -->
+    <div id="products-container"></div>
+    
+    <!-- Layer 4: Foreground Layer -->
+    <div id="foreground-layer">
+      <!-- Generated via JS for parallax -->
+    </div>
+
+    <!-- UI Layer -->
+    <div id="ui-layer">
+        <div class="logo-area">
+            <h1>PREMIUM SELECTION</h1>
+            <div class="divider"></div>
+        </div>
+        <div id="pagination-indicators"></div>
+    </div>
+  </div>
+  
+  <!-- Animation Script -->
+  <script src="animation.js"></script>
+</body>
+</html>

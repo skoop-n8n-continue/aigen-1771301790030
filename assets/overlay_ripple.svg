@@ -1,0 +1,12 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="rippleGradient">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="250" cy="250" r="200" fill="url(#rippleGradient)"/>
+</svg>

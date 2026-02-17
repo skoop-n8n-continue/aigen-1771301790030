@@ -1,0 +1,257 @@
+/* ========================================
+   RESET & BASE
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-sage: #8A9A5B;
+  --color-beige: #F5F5DC;
+  --color-gold: #D4AF37;
+  --color-dark-earth: #2d3b2d;
+  --color-text-primary: #1a2815;
+  --color-text-secondary: #4a5d42;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Lato', sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  background: #000;
+  color: var(--color-text-primary);
+}
+
+/* ========================================
+   SCENE
+   ======================================== */
+#scene {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+/* ========================================
+   BACKGROUND LAYERS
+   ======================================== */
+#background {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://skoop-general.s3.us-east-1.amazonaws.com/n8n_image_gen%2Fzen_garden_background-1771302164797.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transform: scale(1.1); /* Allow for gentle pan/zoom */
+}
+
+#background-effects {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+#light-rays {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://skoop-general.s3.us-east-1.amazonaws.com/n8n_image_gen%2Flight_rays_overlay-1771302162754.png');
+  background-size: cover;
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
+#ripples-container {
+  position: absolute;
+  inset: 0;
+  /* Ripples generated via JS */
+}
+
+.ripple {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+/* ========================================
+   FOREGROUND
+   ======================================== */
+#foreground-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.leaf {
+  position: absolute;
+  width: 120px;
+  height: auto;
+  opacity: 0.8;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+}
+
+/* ========================================
+   UI LAYER
+   ======================================== */
+#ui-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.logo-area {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background: var(--color-sage);
+}
+
+#pagination-indicators {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.page-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.page-dot.active {
+  background: var(--color-gold);
+  transform: scale(1.2);
+}
+
+/* ========================================
+   PRODUCTS
+   ======================================== */
+#products-container {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Product Card - Glassmorphism */
+.product {
+  position: absolute;
+  width: 320px;
+  /* height: auto; Removed fixed height to allow content to flow */
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    
+  transition: transform 0.3s ease;
+  opacity: 0; /* Hidden initially for animation */
+}
+
+.product-image-container {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
+
+.product-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--color-gold);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+}
+
+.product-name {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.product-offer {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-sage);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.product-price {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  color: var(--color-text-primary);
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(255,255,255,0.5);
+}
+
+/* Layout Variations Support */
+.product.double-stack .product-image-container {
+  /* Special handling for double images if needed */
+}
