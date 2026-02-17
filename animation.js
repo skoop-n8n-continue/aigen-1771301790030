@@ -131,9 +131,9 @@ function getPositions(count) {
       { x: w * 0.65, y: h * 0.5 }
     ],
     3: [
-      { x: w * 0.25, y: h * 0.55 }, // Left
+      { x: w * 0.20, y: h * 0.55 }, // Left (Widened from 0.25 to 0.20)
       { x: w * 0.5,  y: h * 0.45 }, // Center-High
-      { x: w * 0.75, y: h * 0.55 }  // Right
+      { x: w * 0.80, y: h * 0.55 }  // Right (Widened from 0.75 to 0.80)
     ],
     4: [
       { x: w * 0.20, y: h * 0.45 },
